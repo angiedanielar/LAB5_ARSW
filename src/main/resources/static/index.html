@@ -39,18 +39,19 @@
 
     <body>
         <h1>Cinema Bookings!</h1>    
-        <p>Cinema: <input type="text" size="15" maxlength="30" value="Name" name="nombre">
-            <input type="text" size="15" maxlength="30" value="Date" name="fecha">
-            <input type="submit" value="Get Functions"></p>
+        <p>Cinema: <input type="text" value="Name" name="name" id="cinema" placeholder="Example: cinemaX">
+            <input type="text" value="Date" name="date" id="date" placeholder="Example: 2018-12-20 17:00">            
+            <button onclick="app.updateFunctions(cinema.value, date.value)">Get Functions</button>
+        </p>
         <p>Cinema Selected:</p>
 
         <h2>Movies:</h2>
         <table id="t01">
             <tr>
-                <th>Name</th>
-                <th>Genre</th>
-                <th>Hour</th>
-                <th>Availability</th>
+                <th scope="col">Name</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Hour</th>
+                <th scope="col">Availability</th>
             </tr>
 
         </table>
