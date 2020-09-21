@@ -25,26 +25,20 @@ var app = (function () {
 
     function _mapOneByOne(cinemaFunctions){
         functions = _map(cinemaFunctions);
-        var tabla = $("cines");
-        var body = $("tbody");
-        if (body != null) {
-            body.remove();
-        }
-        tabla.append("<tbody>");
-        var tblBody = $("tbody");
+        $("#cines > tbody").empty();
         functions.map(function(f){
             var fila = '<tr><td>' + f.nombre + '</td><td>' + f.genero + '</td><td>' + f.hora + '</td><td>';
-            tblBody.append(fila);
+            $("#cines > tbody").append(fila)
         })
-        tabla.append(tblBody);
-        tabla.append("</tbody>");
+
 
     }
 
     function getFunctions(){
-        cinemaName = $("#name").val();
-        cinemaDate = $("#date").val();
-        apimock.getFunctionsByCinemaAndDate(cinemaName,cinemaDate,_mapOneByOne)
+        _cinema = $("#cinema").val();
+        _date = $("#date").val();
+        $("#cinemaSelected").text("Cinema Selected: "+_cinema);
+        apimock.getFunctionsByCinemaAndDate(_cinema,_date,_mapOneByOne)
     }
 
     return {
