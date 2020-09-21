@@ -14,7 +14,7 @@
 
         <style>
             table {
-                width:100%;
+                width:50%;
             }
             table, th, td {
                 border: 1px solid black;
@@ -24,13 +24,13 @@
                 padding: 15px;
                 text-align: left;
             }
-            #t01 tr:nth-child(even) {
+            #cines tr:nth-child(even) {
                 background-color: #eee;
             }
-            #t01 tr:nth-child(odd) {
+            #cines tr:nth-child(odd) {
                 background-color: #fff;
             }
-            #t01 th {
+            #cines th {
                 background-color: black;
                 color: white;
             }
@@ -39,14 +39,14 @@
 
     <body>
         <h1>Cinema Bookings!</h1>    
-        <p>Cinema: <input type="text" value="Name" name="name" id="cinema" placeholder="Example: cinemaX">
-            <input type="text" value="Date" name="date" id="date" placeholder="Example: 2018-12-20 17:00">            
-            <button onclick="app.updateFunctions(cinema.value, date.value)">Get Functions</button>
+        <p>Cinema: <input type="text" value="cinemaX" id="cinema" placeholder="Example: cinemaX">
+            <input type="text" value="2018-12-18 15:30" id="date" placeholder="Example: 2018-12-18 15:30" >
+            <button onclick="app.getFunctions()">Get Functions</button>
         </p>
-        <p>Cinema Selected:</p>
+        <p>Cinema Selected: <h1 id="cinemaSelected"> </h1> </p>
 
-        <h2>Movies:</h2>
-        <table id="t01">
+        <h1>Movies:</h1>
+        <table id="cines">
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Genre</th>
